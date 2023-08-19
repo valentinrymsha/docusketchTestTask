@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Tasks: Object {
+class Task: Object {
     @Persisted var task = String()
     @Persisted var done = Bool()
 }
