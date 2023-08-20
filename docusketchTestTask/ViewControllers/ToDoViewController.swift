@@ -64,6 +64,8 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
         } else {
+            cell.progressImage.isHidden = false
+            cell.taskLabel.text = "Task"
             return cell
         }
     }
