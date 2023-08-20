@@ -1,52 +1,23 @@
-//
-//  TaskViewController.swift
-//  docusketchTestTask
-//
-//  Created by Valentin on 19.08.23.
-//
-
 import UIKit
 import RealmSwift
 
-
-class TaskViewController: UIViewController {
+final class TaskViewController: UIViewController {
     
-    let realm = try! Realm()
+    static let identifier = "TaskVC"
+    private let realm = DatabaseManager.realm
     
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet private weak var saveButton: UIButton!
     
-    @IBOutlet weak var newTaskTextField: UITextField!
-    
-    @IBAction func saveNewTaskButton(_ sender: Any) {
-    
-        guard newTaskTextField.text?.isEmpty != true else {
-            return noTextAlert()
-        }
-        
-        let newTask = Task()
-        newTask.task = newTaskTextField.text!
-        newTask.done = true
-        
-        try! realm.write {
-            realm.add(newTask)
-            realm.refresh()
-        }
-        
-        newTaskTextField.text?.removeAll()
-        successTaskAlert()
-        
-    }
+    @IBOutlet private weak var newTaskTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        saveButton.layer.cornerRadius = 10
-        saveButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        
+        initializeHideKeyboard()
         
     }
     
-    func noTextAlert() {
+    private func noTextAlert() {
         let alert = UIAlertController(title: "Error:(", message: "You should to write something",
                                       preferredStyle: .alert)
         
@@ -55,7 +26,7 @@ class TaskViewController: UIViewController {
         present(alert,animated: true)
     }
     
-    func successTaskAlert() {
+    private func successTaskAlert() {
         let alert = UIAlertController(title: "Completed!",
                                       message: nil,
                                       preferredStyle: .alert)
@@ -64,4 +35,36 @@ class TaskViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    @IBAction private func saveNewTaskButton(_ sender: Any) {
+        
+        guard newTaskTextField.text?.isEmpty != true else {
+            return noTextAlert()
+        }
+        
+        let newTask = TaskModel()
+        newTask.task = newTaskTextField.text!
+        newTask.done = true
+        
+        DatabaseManager.write(realm: realm, writeClosure: {
+            realm.add(newTask)
+            realm.refresh()
+        })
+        
+        newTaskTextField.text?.removeAll()
+        successTaskAlert()
+        
+    }
+}
+
+extension TaskViewController {
+    
+ private func initializeHideKeyboard(){
+ 
+     let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self,
+                                                           action: #selector(dismissMyKeyboard))
+     view.addGestureRecognizer(tap)
+ }
+ @objc func dismissMyKeyboard(){
+     view.endEditing(true)
+ }
 }

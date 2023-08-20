@@ -13,9 +13,11 @@
 		A74E08CC2A8FE7CA00D4B7F6 /* ToDoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74E08CA2A8FE7CA00D4B7F6 /* ToDoList.storyboard */; };
 		A74E08CE2A8FE7CB00D4B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74E08CD2A8FE7CB00D4B7F6 /* Assets.xcassets */; };
 		A74E08D12A8FE7CB00D4B7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74E08CF2A8FE7CB00D4B7F6 /* LaunchScreen.storyboard */; };
-		A75678D22A8FFE040078F068 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75678D12A8FFE040078F068 /* Task.swift */; };
+		A75678D22A8FFE040078F068 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75678D12A8FFE040078F068 /* TaskModel.swift */; };
 		A75678D62A90070C0078F068 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75678D52A90070C0078F068 /* TaskTableViewCell.swift */; };
 		A75678D82A90C2B20078F068 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75678D72A90C2B20078F068 /* TaskViewController.swift */; };
+		A773CAC32A9229C30042E2BC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773CAC22A9229C30042E2BC /* DatabaseManager.swift */; };
+		A773CAC82A9261C20042E2BC /* DBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A773CAC72A9261C20042E2BC /* DBErrors.swift */; };
 		BD7CB41DE6A92C3F792EE3CA /* Pods_docusketchTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD99D3D214A8D062E277A060 /* Pods_docusketchTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +31,11 @@
 		A74E08CD2A8FE7CB00D4B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A74E08D02A8FE7CB00D4B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A74E08D22A8FE7CB00D4B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A75678D12A8FFE040078F068 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A75678D12A8FFE040078F068 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		A75678D52A90070C0078F068 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		A75678D72A90C2B20078F068 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		A773CAC22A9229C30042E2BC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A773CAC72A9261C20042E2BC /* DBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBErrors.swift; sourceTree = "<group>"; };
 		C6EC234B1BED465747F7C2D1 /* Pods-docusketchTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docusketchTestTask.debug.xcconfig"; path = "Target Support Files/Pods-docusketchTestTask/Pods-docusketchTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		FD99D3D214A8D062E277A060 /* Pods_docusketchTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_docusketchTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,16 +73,14 @@
 		A74E08C32A8FE7CA00D4B7F6 /* docusketchTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				A773CAC42A92616F0042E2BC /* Core */,
 				A75678CE2A8FFD180078F068 /* Models */,
 				A75678CF2A8FFD220078F068 /* Views */,
 				A75678D02A8FFD2D0078F068 /* ViewControllers */,
 				A74E08C42A8FE7CA00D4B7F6 /* AppDelegate.swift */,
 				A74E08C62A8FE7CA00D4B7F6 /* SceneDelegate.swift */,
-				A74E08CA2A8FE7CA00D4B7F6 /* ToDoList.storyboard */,
 				A74E08CD2A8FE7CB00D4B7F6 /* Assets.xcassets */,
-				A74E08CF2A8FE7CB00D4B7F6 /* LaunchScreen.storyboard */,
 				A74E08D22A8FE7CB00D4B7F6 /* Info.plist */,
-				A75678D52A90070C0078F068 /* TaskTableViewCell.swift */,
 			);
 			path = docusketchTestTask;
 			sourceTree = "<group>";
@@ -86,7 +88,8 @@
 		A75678CE2A8FFD180078F068 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A75678D12A8FFE040078F068 /* Task.swift */,
+				A75678D12A8FFE040078F068 /* TaskModel.swift */,
+				A773CAC22A9229C30042E2BC /* DatabaseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,6 +97,9 @@
 		A75678CF2A8FFD220078F068 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A74E08CF2A8FE7CB00D4B7F6 /* LaunchScreen.storyboard */,
+				A74E08CA2A8FE7CA00D4B7F6 /* ToDoList.storyboard */,
+				A75678D52A90070C0078F068 /* TaskTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +111,22 @@
 				A75678D72A90C2B20078F068 /* TaskViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A773CAC42A92616F0042E2BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A773CAC52A92618B0042E2BC /* Errors */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A773CAC52A92618B0042E2BC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				A773CAC72A9261C20042E2BC /* DBErrors.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		BACD4E446DB3379446532053 /* Pods */ = {
@@ -240,11 +262,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74E08C92A8FE7CA00D4B7F6 /* ToDoViewController.swift in Sources */,
-				A75678D22A8FFE040078F068 /* Task.swift in Sources */,
+				A75678D22A8FFE040078F068 /* TaskModel.swift in Sources */,
 				A74E08C52A8FE7CA00D4B7F6 /* AppDelegate.swift in Sources */,
 				A74E08C72A8FE7CA00D4B7F6 /* SceneDelegate.swift in Sources */,
+				A773CAC82A9261C20042E2BC /* DBErrors.swift in Sources */,
 				A75678D62A90070C0078F068 /* TaskTableViewCell.swift in Sources */,
 				A75678D82A90C2B20078F068 /* TaskViewController.swift in Sources */,
+				A773CAC32A9229C30042E2BC /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

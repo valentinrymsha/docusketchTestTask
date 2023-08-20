@@ -12,46 +12,61 @@
         <!--ToDoList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ToDoViewController" customModule="docusketchTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToDoVC" id="BYZ-38-t0r" customClass="ToDoViewController" customModule="docusketchTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-tg-j0B">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-tg-j0B">
                                 <rect key="frame" x="5" y="113" width="420" height="780"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="gsW-L8-uup" customClass="TaskTableViewCell" customModule="docusketchTestTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="420" height="51.333332061767578"/>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleAspectFill" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="gsW-L8-uup" customClass="TaskTableViewCell" customModule="docusketchTestTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="420" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gsW-L8-uup" id="GmS-Wv-r4l">
-                                            <rect key="frame" x="0.0" y="0.0" width="420" height="51.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="420" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-xu-0Im">
+                                                    <rect key="frame" x="0.0" y="0.0" width="420" height="44"/>
+                                                    <color key="backgroundColor" red="0.75294119120000003" green="0.88235294819999999" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneImg" translatesAutoresizingMaskIntoConstraints="NO" id="vcw-rX-o3y">
-                                                    <rect key="frame" x="370" y="10.666666666666664" width="30" height="30"/>
+                                                    <rect key="frame" x="370" y="7" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="gYO-nW-HeN"/>
                                                         <constraint firstAttribute="height" constant="30" id="nWP-Nt-eRa"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puf-Mx-3b8">
-                                                    <rect key="frame" x="20" y="15" width="345" height="20.333333333333329"/>
+                                                    <rect key="frame" x="20" y="11.999999999999998" width="345" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="vcw-rX-o3y" firstAttribute="leading" secondItem="v0f-xu-0Im" secondAttribute="trailing" constant="-50" id="2yO-pv-Zak"/>
                                                 <constraint firstItem="vcw-rX-o3y" firstAttribute="leading" secondItem="Puf-Mx-3b8" secondAttribute="trailing" constant="5" id="5gT-mr-gCg"/>
-                                                <constraint firstItem="Puf-Mx-3b8" firstAttribute="top" secondItem="GmS-Wv-r4l" secondAttribute="top" constant="15" id="Dlp-1L-C5C"/>
                                                 <constraint firstItem="Puf-Mx-3b8" firstAttribute="leading" secondItem="GmS-Wv-r4l" secondAttribute="leadingMargin" id="EhA-Vx-bbx"/>
                                                 <constraint firstAttribute="trailing" secondItem="vcw-rX-o3y" secondAttribute="trailing" constant="20" symbolic="YES" id="Ftx-n9-f3W"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Puf-Mx-3b8" secondAttribute="bottom" constant="4.9999987284342495" id="IPc-Mb-4na"/>
+                                                <constraint firstAttribute="bottom" secondItem="v0f-xu-0Im" secondAttribute="bottom" id="LQm-9D-LU3"/>
                                                 <constraint firstItem="vcw-rX-o3y" firstAttribute="centerY" secondItem="GmS-Wv-r4l" secondAttribute="centerY" id="b3X-5q-PbM"/>
+                                                <constraint firstItem="v0f-xu-0Im" firstAttribute="leading" secondItem="GmS-Wv-r4l" secondAttribute="leading" id="dCt-Lk-8wC"/>
+                                                <constraint firstAttribute="bottom" secondItem="Puf-Mx-3b8" secondAttribute="bottom" constant="11.666666666666671" id="h6P-Px-YfU"/>
+                                                <constraint firstItem="Puf-Mx-3b8" firstAttribute="top" secondItem="GmS-Wv-r4l" secondAttribute="top" constant="12" id="qjv-Zd-cLd"/>
+                                                <constraint firstItem="v0f-xu-0Im" firstAttribute="top" secondItem="GmS-Wv-r4l" secondAttribute="top" id="rNl-EA-qrN"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.75294119120000003" green="0.88235294819999999" blue="0.62352943419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="cellView" destination="v0f-xu-0Im" id="Aea-9P-wgX"/>
                                             <outlet property="progressImage" destination="vcw-rX-o3y" id="D6I-bI-Mfv"/>
                                             <outlet property="taskLabel" destination="Puf-Mx-3b8" id="GDM-2e-QD7"/>
                                         </connections>
@@ -89,7 +104,7 @@
         <!--Task View Controller-->
         <scene sceneID="fXt-HG-yjl">
             <objects>
-                <viewController storyboardIdentifier="TaskViewController" modalPresentationStyle="pageSheet" id="i50-Gr-BEA" customClass="TaskViewController" customModule="docusketchTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskVC" modalPresentationStyle="pageSheet" id="i50-Gr-BEA" customClass="TaskViewController" customModule="docusketchTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYr-K6-V6t">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,6 +136,14 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Save">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" red="0.29757368564605713" green="0.84447091817855835" blue="0.91237133741378784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="saveNewTaskButton:" destination="i50-Gr-BEA" eventType="touchUpInside" id="ZnI-aI-ckd"/>
                                         </connections>
