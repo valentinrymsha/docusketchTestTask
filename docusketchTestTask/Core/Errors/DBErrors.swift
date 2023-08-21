@@ -1,10 +1,3 @@
-//
-//  DBErrors.swift
-//  docusketchTestTask
-//
-//  Created by Valentin on 20.08.23.
-//
-
 import Foundation
 
 enum DBErrors: Error {
@@ -23,7 +16,7 @@ extension DBErrors: LocalizedError {
             return "No access"
         case .notExistDBError:
             return "DB not exist yet"
-        
+            
         }
     }
 }

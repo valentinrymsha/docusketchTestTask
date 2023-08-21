@@ -14,5 +14,6 @@ final class TaskTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 0))
+        
     }
 }

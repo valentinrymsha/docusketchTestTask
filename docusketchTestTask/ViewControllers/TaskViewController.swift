@@ -58,13 +58,14 @@ final class TaskViewController: UIViewController {
 
 extension TaskViewController {
     
- private func initializeHideKeyboard(){
- 
-     let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self,
-                                                           action: #selector(dismissMyKeyboard))
-     view.addGestureRecognizer(tap)
- }
- @objc func dismissMyKeyboard(){
-     view.endEditing(true)
- }
+    private func initializeHideKeyboard(){
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self,
+                                                                  action: #selector(dismissMyKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        view.endEditing(true)
+    }
 }
