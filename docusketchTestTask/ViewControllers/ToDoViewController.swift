@@ -31,13 +31,13 @@ final class ToDoViewController: UIViewController {
         
     }
     
-    @IBAction private func addTaskButton(_ sender: Any) {
+    @IBAction private func addTaskButton(_ sender: UIButton) {
         
-        guard let vc = self.storyboard?.instantiateViewController(identifier: TaskViewController.identifier) as? TaskViewController else {
+        guard let taskVC = self.storyboard?.instantiateViewController(identifier: TaskViewController.identifier) as? TaskViewController else {
             return
         }
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(taskVC, animated: true)
         
     }
 }
@@ -65,7 +65,7 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             cell.progressImage.isHidden = false
-            cell.taskLabel.text = "Task"
+            cell.taskLabel.text = "Task will be here!"
             return cell
         }
     }

@@ -38,6 +38,7 @@ final class TaskViewController: UIViewController {
     @IBAction private func saveNewTaskButton(_ sender: Any) {
         
         guard newTaskTextField.text?.isEmpty != true else {
+            dismissMyKeyboard()
             return noTextAlert()
         }
         
@@ -51,6 +52,7 @@ final class TaskViewController: UIViewController {
         })
         
         newTaskTextField.text?.removeAll()
+        dismissMyKeyboard()
         successTaskAlert()
         
     }
